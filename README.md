@@ -2,6 +2,12 @@
 
 Strapi plugin for file uploading to Azure storage and SFTP.
 
+### Change log
+* 1.0.3: Patch with file routes
+* 1.0.2: Added private field
+* 1.0.1: Small hotfix
+* 1.0.0: Initial version
+
 ### Installing
 
 Inside your strapi project run the following
@@ -65,6 +71,9 @@ module.exports = ({ env }) => ({
 
 `serviceBaseURL` is optional, it is useful when connecting to Azure Storage API compatible services, like the official emulator [Azurite](https://github.com/Azure/Azurite/). `serviceBaseURL` would then look like `http://localhost:10000/your-storage-account-key`.  
 When `serviceBaseURL` is not provided, default `https://${account}.blob.core.windows.net` will be used.
+
+### Private field
+If the file object which the provider receives from Strapi have a field private: true the file won't be uploaded to the SFTP and url and urlAzure will have the same URL
 
 ## Authors
 * **Al Hill** - *Join both providers for using them together* (https://github.com/alhill)
